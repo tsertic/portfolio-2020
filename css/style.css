@@ -295,14 +295,43 @@ div[class^='category-'] {
   background-color: var(--primary-text);
 }
 
-button.active {
-  color: #fff;
+.project-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.project-container img {
+  width: 100%;
+  height: 230px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.project-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.work a img {
-  width: 350px;
-  height: 200px;
-  justify-self: center;
+.project-links a {
+  display: block;
+  width: 40%;
+  text-align: center;
+  color: var(--primary-text);
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.project-links span {
+  transform: translateX(1px);
+  border-left: 1px solid var(--primary-text);
+}
+
+.github-icon i {
+  padding-top: 2px;
+  font-size: 1.3em;
+}
+button.active {
+  color: #fff;
 }
 
 div.hideCategory {
