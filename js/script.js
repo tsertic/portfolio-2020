@@ -73,3 +73,12 @@ const showRequiredCategory = event => {
   getCategory.classList.remove('hideCategory');
   getCategory.classList.add('showCategory');
 };
+
+//works buttons
+const workBtn = document.querySelectorAll('.work-category button');
+
+for (i = 0; i < workBtn.length; i++) {
+  workBtn[i].addEventListener('click', e => {
+    showRequiredCategory(e.target);
+  });
+}
