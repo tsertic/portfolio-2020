@@ -2,4 +2,4 @@
 
 My portfolio,created with html,css,vanilla js
 
-[www.sertic-dev.com](wwww.sertic-dev.com)
+[www.sertic-dev.com](https://www.sertic-dev.com/)
