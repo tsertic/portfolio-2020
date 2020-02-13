@@ -1,0 +1,29 @@
+[
+  {
+    "name": "buisness-app",
+    "title": "Currency business app",
+    "desc": "App with Croatian Kuna rates and trending news related to currencies and banks.  You can filter other currencies by currency and date and get exchange rates.It has data visualization for buying , selling and median rates. Two different APIs are used, one for news and other for exchange rates.",
+    "imgUrl": "./gifs/buisness-app.gif",
+    "tech": "Technologies: HTML, Sass, JavaScript, React, chartJS",
+    "github": "https://github.com/tsertic/currency-business-app",
+    "liveDemo": "https://brave-shockley-078a9d.netlify.com/"
+  },
+  {
+    "name": "ecommerce-app",
+    "title": "E-commerce-site",
+    "desc": "E-commerce site where users can select items and add them to a cart and after they can continue shopping or check out and pay. Users can register with new account or sign in with Google or existing account. Stateful components in React are class components.",
+    "imgUrl": "./gifs/ecommerce-app.gif",
+    "tech": "Technologies: HTML, CSS, Sass, JavaScript, React, Redux, Firebase",
+    "github": "https://github.com/tsertic/e-commerce-testv1",
+    "liveDemo": "https://e-commerce-site-ts.herokuapp.com/"
+  },
+  {
+    "name": "weekly-workout-app",
+    "title": "Weekly workout planner",
+    "desc": "MERN app for creating weekly workout planner. On backend is used node with express and mongoDB as database, notable libraries are bcryptjs for hashing password and jsonwebtoken for handling token auth. On frontend part is react, state management is handled with context api, all components are functional and styling is applied using css modules.",
+    "imgUrl": "./gifs/weekly-workout-app.gif",
+    "tech": "Technologies: HTML, CSS, JavaScript, React, NodeJs, Express, mongoDB",
+    "github": "https://github.com/tsertic/weekly-workout-planer",
+    "liveDemo": "https://weekly-workout-planner.herokuapp.com/login"
+  }
+]

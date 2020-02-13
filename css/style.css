@@ -1,6 +1,7 @@
 :root {
   --primary-text: #2b6f89;
   --secondary-color: #ed5565;
+  --background-color: #252627;
 }
 
 * {
@@ -27,7 +28,7 @@ nav ul,
 }
 
 body {
-  background-color: #252627;
+  background-color: var(--background-color);
 }
 
 header {
@@ -166,7 +167,7 @@ span.m-left {
 
 .about-me-info {
   max-width: 900px;
-  background-color: #252627;
+  background-color: var(--background-color);
   box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
   padding: 50px;
   position: relative;
@@ -273,7 +274,7 @@ div[class^='bar-'] {
   color: var(--primary-text);
   font-size: 1.1rem;
   letter-spacing: 1px;
-  background-color: #252627;
+  background-color: var(--background-color);
   outline: none;
   cursor: pointer;
 }
@@ -351,7 +352,7 @@ form textarea {
   display: block;
   width: 500px;
   padding: 20px;
-  background-color: #252627;
+  background-color: var(--background-color);
   border: 3px solid #707070;
   margin: 20px 0;
   outline: none;
@@ -372,7 +373,7 @@ form input:last-child {
 
 .contact-me-info {
   max-width: 900px;
-  background-color: #252627;
+  background-color: var(--background-color);
   box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.25);
   padding: 50px;
   position: relative;
@@ -409,6 +410,98 @@ footer p {
   font-size: 1.2rem;
   padding: 30px 0;
 }
+
+/* MODAL */
+.modal__backdrop {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 25;
+  background: rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+}
+.modal {
+  z-index: 30;
+  position: fixed;
+  top: 60px;
+  left: calc(50% - 300px);
+  width: 600px;
+  height: 600px;
+  background: var(--background-color);
+  color: var(--primary-text);
+  border: 3px solid var(--primary-text);
+  border-radius: 10px;
+  padding: 5px;
+}
+.modal__header {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal__title {
+  width: 50%;
+  font-size: 1.6em;
+}
+.modal__header .project-links {
+  width: 40%;
+}
+.modal__img {
+  width: 100%;
+}
+.modal__desc {
+  font-size: 1.2em;
+  padding: 5px;
+  margin: 10px 0 20px 0;
+}
+
+.hide {
+  display: none;
+  z-index: -1;
+
+  animation: hide 0.25s;
+
+  transform: scale(0);
+}
+
+.show {
+  z-index: 30;
+  animation: show 0.2s;
+
+  transform: scale(1);
+  display: block;
+  transition: 500ms;
+}
+
+/* Animations */
+@keyframes hide {
+  from {
+    z-index: 2;
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    z-index: -1;
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes show {
+  from {
+    transform: scale(0);
+    opacity: 0;
+    z-index: -1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+/* Responsivnes */
 
 @media (max-width: 500px) {
   .container {
@@ -499,5 +592,9 @@ footer p {
 
   .contact-me-info {
     top: -10px;
+  }
+  /* TODO: STYLE MODAL FOR MOBILE VIEW */
+  .project-links .infoIcon {
+    display: none;
   }
 }

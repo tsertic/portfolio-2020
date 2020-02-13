@@ -82,3 +82,49 @@ for (i = 0; i < workBtn.length; i++) {
     showRequiredCategory(e.target);
   });
 }
+
+//modal toggle
+let projectData = [];
+let showDataModal;
+fetch('./../data/work.json')
+  .then(res => res.json())
+  .then(data => (projectData = data));
+const modalDiv = document.querySelector('.modal');
+const infoIcon = document.querySelectorAll('.infoIcon');
+const modalBackdrop = document.querySelector('.modal__backdrop');
+const modalTitle = document.querySelector('.modal__title');
+const modalImg = document.querySelector('.modal__img');
+const modalDesc = document.querySelector('.modal__desc');
+const modalTech = document.querySelector('.modal__tech');
+const modalGithub = document.querySelector('.modal__github');
+const modalLiveDemo = document.querySelector('.modal__liveDemo');
+infoIcon.forEach(icon => {
+  icon.addEventListener('click', e => {
+    //search loaded json file for object that match name and get it to load data in modal
+    modalData = projectData.filter(project => {
+      console.log(project.name);
+      return project.name === e.currentTarget.name;
+    });
+    showDataModal = modalData[0];
+    //put data into modal html content
+    //load name,desc,tech used and image
+    modalTitle.textContent = showDataModal.title;
+    modalDesc.textContent = showDataModal.desc;
+    modalImg.setAttribute('src', showDataModal.imgUrl);
+    modalTech.textContent = showDataModal.tech;
+    modalGithub.setAttribute('href', showDataModal.github);
+    modalLiveDemo.setAttribute('href', showDataModal.liveDemo);
+    //add show class to show element and remove hide
+    modalBackdrop.classList.add('show');
+    modalBackdrop.classList.remove('hide');
+    modalDiv.classList.add('show');
+    modalDiv.classList.remove('hide');
+  });
+});
+
+modalBackdrop.addEventListener('click', () => {
+  modalBackdrop.classList.add('hide');
+  modalBackdrop.classList.remove('show');
+  modalDiv.classList.add('hide');
+  modalDiv.classList.remove('show');
+});
