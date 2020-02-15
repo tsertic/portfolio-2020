@@ -98,11 +98,20 @@ const modalDesc = document.querySelector('.modal__desc');
 const modalTech = document.querySelector('.modal__tech');
 const modalGithub = document.querySelector('.modal__github');
 const modalLiveDemo = document.querySelector('.modal__liveDemo');
+const modalCloseBtn = document.querySelector('.modal__close');
+
+/* Close modal and backdrop  */
+const closeModalAndBackdrop = () => {
+  modalBackdrop.classList.add('hide');
+  modalBackdrop.classList.remove('show');
+  modalDiv.classList.add('hide');
+  modalDiv.classList.remove('show');
+};
+/* Info icon click  */
 infoIcon.forEach(icon => {
   icon.addEventListener('click', e => {
     //search loaded json file for object that match name and get it to load data in modal
     modalData = projectData.filter(project => {
-      console.log(project.name);
       return project.name === e.currentTarget.name;
     });
     showDataModal = modalData[0];
@@ -122,9 +131,8 @@ infoIcon.forEach(icon => {
   });
 });
 
-modalBackdrop.addEventListener('click', () => {
-  modalBackdrop.classList.add('hide');
-  modalBackdrop.classList.remove('show');
-  modalDiv.classList.add('hide');
-  modalDiv.classList.remove('show');
-});
+/* Backdrop click */
+modalBackdrop.addEventListener('click', closeModalAndBackdrop);
+
+/* Close button click */
+modalCloseBtn.addEventListener('click', closeModalAndBackdrop);
