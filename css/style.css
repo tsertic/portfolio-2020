@@ -76,6 +76,11 @@ header a {
   transform: translate(-50%);
 }
 
+header a:hover {
+  transition: 0.3s;
+  color: var(--primary-text);
+}
+
 .main-info-section {
   height: calc(100vh - 81.6px);
 }
@@ -266,6 +271,8 @@ div[class^='bar-'] {
   width: calc(0 - 6px);
 }
 
+/* -------WORK PART--------- */
+
 .work-category button {
   text-transform: capitalize;
   border: 3px solid var(--primary-text);
@@ -331,6 +338,17 @@ div[class^='category-'] {
   padding-top: 2px;
   font-size: 1.3em;
 }
+
+.infoIcon {
+  cursor: pointer;
+}
+
+.project-links a:hover,
+.infoIcon:hover {
+  transition: 0.3s;
+  color: var(--secondary-color);
+}
+
 button.active {
   color: #fff;
 }
@@ -342,7 +360,7 @@ div.hideCategory {
 .showCategory {
   display: block;
 }
-
+/* ------------CONTACT PART-------- */
 .contact {
   margin-top: 50px;
 }
